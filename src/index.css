@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Google Fonts are now imported in the HTML head */
+/* The @import statements have been removed to prevent CORS issues */
+
+/* Apply fonts */
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom Scrollbar Styling */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 5px;
+  width: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #267ffd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: lightgreen;
+}
+
+.scrollbar-thumb-primary-300::-webkit-scrollbar-thumb {
+  background: green;
+}
+
+.scrollbar-track-primary-700::-webkit-scrollbar-track {
+  background: palegreen;
+}
+
+.scrollbar-track-gray-100::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+/* Smooth transitions */
+.transition-max-height {
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Prevent content overflow */
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+/* Table styling */
+.table-hover tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Status badges */
+.status-badge {
+  @apply px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-badge-info {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.status-badge-danger {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary-900 text-white hover:bg-primary-800;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+.btn-success {
+  @apply bg-green-500 text-white hover:bg-green-600;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200;
+}
+
+.card-header {
+  @apply bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-6 py-4;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-footer {
+  @apply bg-gray-50 px-6 py-3 border-t border-gray-200;
+}
+
+/* Toggle switch animation */
+.toggle-switch {
+  @apply relative w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300;
+}
+
+.toggle-switch-handle {
+  @apply absolute left-1 bg-white w-5 h-5 rounded-full shadow-md transform transition-transform duration-300;
+}
+
+.toggle-switch-on {
+  @apply translate-x-7;
+}
+
+.toggle-switch-label {
+  @apply absolute text-xs font-bold;
+}
+
+.toggle-switch-label-on {
+  @apply right-1.5 text-white;
+}
+
+.toggle-switch-label-off {
+  @apply left-1.5 text-white;
+}
