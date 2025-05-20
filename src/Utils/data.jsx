@@ -125,6 +125,14 @@ export const sidebarItems = [
   // { title: "Live Tracking", icon: <RiHomeGearFill />, path: "/gods-eye" }, // 2. God's Eye
   { title: "Orders", icon: <FaFileArchive />, path: "/orders" }, // 13. Orders
   
+  { title: "POS", icon: <FaFileArchive />, path: "/pos" }, // 13. Orders
+  
+  
+  
+  
+  
+  
+  
   { title: "Zone", icon: <MdShareLocation />, path: "/zone" }, // 3. Zone
 
   // {
@@ -243,6 +251,7 @@ export const sidebarItems = [
       },
     ],
   },
+
   {
     title: "Payments", // 18. Payments
     icon: <BsBank />,
@@ -277,8 +286,13 @@ export const sidebarItems = [
         icon: <FaDotCircle size={8} />,
         path: "/payout/requests",
       },
+      
     ],
-  },
+  },{
+        title: "Chat", // 18.6. Payout Requests
+        icon: <FaDotCircle size={8} />,
+        path: "/chat",
+      },
   { title: "Banners Items", icon: <MdEmail />, path: "/banners-items" }, // 19. Banners Items
   // { title: "CMS Pages", icon: <MdEmail />, path: "/cms/pages" }, // 20. CMS Pages
   // { title: "Email Templates", icon: <MdEmail />, path: "/email/templates" }, // 21. Email Templates
