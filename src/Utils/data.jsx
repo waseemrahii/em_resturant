@@ -21,7 +21,7 @@ import {
   FaUsers,
   FaUtensils,
 } from "react-icons/fa"
-import { FaComputer } from "react-icons/fa6"
+import { FaComputer, FaMessage } from "react-icons/fa6"
 import { IoMdCart, IoMdWallet } from "react-icons/io"
 import { IoBagHandle, IoCheckmarkCircleSharp, IoCloseOutline, IoDocumentText, IoFastFoodOutline } from "react-icons/io5"
 import { LuMonitorSmartphone } from "react-icons/lu"
@@ -126,59 +126,53 @@ export const sidebarItems = [
   { title: "Orders", icon: <FaFileArchive />, path: "/orders" }, // 13. Orders
   
   { title: "POS", icon: <FaFileArchive />, path: "/pos" }, // 13. Orders
-  
-  
-  
-  
-  
-  
-  
+
   { title: "Zone", icon: <MdShareLocation />, path: "/zone" }, // 3. Zone
 
-  // {
-  //   title: "Owners / Vendors", // 6. Owners / Vendors
-  //   icon: <FaUserCog />,
-  //   subSections: [
-  //     {
-  //       title: "All Vendors", // 6.1. All Vendors
-  //       icon: <FaDotCircle size={8} />,
-  //       path: "/vendors/all",
-  //     },
-  //     {
-  //       title: "Approved Vendors", // 6.2. Approved Vendors
-  //       icon: <FaDotCircle size={8} />,
-  //       path: "/vendors/approved",
-  //     },
-  //     {
-  //       title: "Approval Pending Vendors", // 6.3. Approval Pending Vendors
-  //       icon: <FaDotCircle size={8} />,
-  //       path: "/vendors/pending",
-  //     },
-  //   ],
-  // },
-  // { title: "Drivers", icon: <FaClipboardList />, path: "/drivers/all" }, // 7. Restaurants
+  {
+    title: "Owners / Vendors", // 6. Owners / Vendors
+    icon: <FaUserCog />,
+    subSections: [
+      {
+        title: "All Vendors", // 6.1. All Vendors
+        icon: <FaDotCircle size={8} />,
+        path: "/vendors/all",
+      },
+      {
+        title: "Approved Vendors", // 6.2. Approved Vendors
+        icon: <FaDotCircle size={8} />,
+        path: "/vendors/approved",
+      },
+      {
+        title: "Approval Pending Vendors", // 6.3. Approval Pending Vendors
+        icon: <FaDotCircle size={8} />,
+        path: "/vendors/pending",
+      },
+    ],
+  },
+  { title: "Drivers", icon: <FaClipboardList />, path: "/drivers/all" }, // 7. Restaurants
   
-  // {
-  //   title: "Drivers", // 8. Drivers
-  //   icon: <FaCar />,
-  //   subSections: [
-  //     {
-  //       title: "All Drivers", // 8.1. All Drivers
-  //       icon: <FaDotCircle size={8} />,
-  //       path: "/drivers/all",
-  //     },
-  //     {
-  //       title: "Approved Drivers", // 8.2. Approved Drivers
-  //       icon: <FaDotCircle size={8} />,
-  //       path: "/drivers/approved",
-  //     },
-  //     {
-  //       title: "Approval Pending Drivers", // 8.3. Approval Pending Drivers
-  //       icon: <FaDotCircle size={8} />,
-  //       path: "/drivers/pending",
-  //     },
-  //   ],
-  // },
+  {
+    title: "Drivers", // 8. Drivers
+    icon: <FaCar />,
+    subSections: [
+      {
+        title: "All Drivers", // 8.1. All Drivers
+        icon: <FaDotCircle size={8} />,
+        path: "/drivers/all",
+      },
+      {
+        title: "Approved Drivers", // 8.2. Approved Drivers
+        icon: <FaDotCircle size={8} />,
+        path: "/drivers/approved",
+      },
+      {
+        title: "Approval Pending Drivers", // 8.3. Approval Pending Drivers
+        icon: <FaDotCircle size={8} />,
+        path: "/drivers/pending",
+      },
+    ],
+  },
 
  
   // {
@@ -235,7 +229,14 @@ export const sidebarItems = [
   // },
   // { title: "Users / Customers", icon: <FaUsers />, path: "/users" }, // 5. Users / Customers
   // { title: "Documents", icon: <IoDocumentText />, path: "/documents" }, // 16. Documents
+
   {
+        title: "Chat", // 18.6. Payout Requests
+       icon: <FaMessage  />,
+        path: "/chat",
+      },
+  { title: "Banners Items", icon: <MdEmail />, path: "/banners-items" }, // 19. Banners Items
+    {
     title: "Notifications", // 17. Notifications
     icon: <FaBell />,
     subSections: [
@@ -288,12 +289,7 @@ export const sidebarItems = [
       },
       
     ],
-  },{
-        title: "Chat", // 18.6. Payout Requests
-        icon: <FaDotCircle size={8} />,
-        path: "/chat",
-      },
-  { title: "Banners Items", icon: <MdEmail />, path: "/banners-items" }, // 19. Banners Items
+  },
   // { title: "CMS Pages", icon: <MdEmail />, path: "/cms/pages" }, // 20. CMS Pages
   // { title: "Email Templates", icon: <MdEmail />, path: "/email/templates" }, // 21. Email Templates
   {

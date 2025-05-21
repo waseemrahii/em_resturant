@@ -32,7 +32,7 @@ const DashBoard = () => {
   const { data: recentOrdersData, isLoading: ordersLoading, error: ordersError } = useGetRecentOrdersQuery()
 
   const {
-    data: topRestaurantsData,
+    // data: topRestaurantsData,
     isLoading: restaurantsLoading,
     error: restaurantsError,
   } = useGetTopRestaurantsQuery()
@@ -50,9 +50,9 @@ const DashBoard = () => {
   // Dashboard data state
   const [dashboardData, setDashboardData] = useState({
     totalEarnings: 0,
-    // totalRestaurants: 0,
-    // activeVendors: 0,
-    // totalVendors: 0,
+    totalRestaurants: 0,
+    activeVendors: 0,
+    totalVendors: 0,
     totalOrders: 0,
     totalFoods: 0,
     adminCommission: 0,
@@ -85,7 +85,7 @@ const DashBoard = () => {
       totalOrders: 0,
       totalFoods: 0,
       totalClients: 0,
-      // totalDrivers: 0,
+      totalDrivers: 0,
     },
     salesOverview: {
       totalEarnings: 0,
@@ -99,14 +99,14 @@ const DashBoard = () => {
       const data = statsData.data
       setDashboardData({
         totalEarnings: data.totalRevenue || 0,
-        // totalRestaurants: data.totalVendors || 0,
-        // activeVendors: data.activeVendors || 0,
-        // totalVendors: data.totalVendors || 0,
+        totalRestaurants: data.totalVendors || 0,
+        activeVendors: data.activeVendors || 0,
+        totalVendors: data.totalVendors || 0,
         totalOrders: data.totalOrders || 0,
         totalFoods: data.totalFoods || 0,
         adminCommission: data.adminCommission || 0,
         totalClients: data.totalCustomers || 0,
-        // totalDrivers: data.totalDrivers || 0,
+        totalDrivers: data.totalDrivers || 0,
         ordersByStatus: data.ordersByStatus || {},
         chartData: data.chartData || {},
         monthlyChartData: data.monthlyChartData || {},
@@ -124,15 +124,15 @@ const DashBoard = () => {
     if (ordersError) {
       toast.error("Failed to load recent orders")
     }
-    // if (restaurantsError) {
-    //   toast.error("Failed to load top restaurants")
-    // }
+    if (restaurantsError) {
+      toast.error("Failed to load top restaurants")
+    }
     if (foodsError) {
       toast.error("Failed to load top foods")
     }
-    // if (driversError) {
-    //   toast.error("Failed to load top drivers")
-    // }
+    if (driversError) {
+      toast.error("Failed to load top drivers")
+    }
     if (payoutsError) {
       toast.error("Failed to load recent payouts")
     }
@@ -148,15 +148,15 @@ const DashBoard = () => {
       iconBg: "bg-gradient-to-r from-green-500 to-green-600",
       textColor: "text-green-700",
     },
-    // {
-    //   title: "Total Vendors",
-    //   value: dashboardData.totalVendors,
-    //   icon: <FaStore />,
-    //   link: "/restaurants",
-    //   bgColor: "bg-gradient-to-r from-blue-50 to-blue-100",
-    //   iconBg: "bg-gradient-to-r from-blue-500 to-blue-600",
-    //   textColor: "text-blue-700",
-    // },
+    {
+      title: "Total Vendors",
+      value: dashboardData.totalVendors,
+      icon: <FaStore />,
+      link: "/restaurants",
+      bgColor: "bg-gradient-to-r from-blue-50 to-blue-100",
+      iconBg: "bg-gradient-to-r from-blue-500 to-blue-600",
+      textColor: "text-blue-700",
+    },
     {
       title: "Total Orders",
       value: dashboardData.totalOrders,
@@ -194,14 +194,14 @@ const DashBoard = () => {
       iconBg: "bg-gradient-to-r from-indigo-500 to-indigo-600",
       textColor: "text-indigo-700",
     },
-    // {
-    //   title: "Total Drivers",
-    //   value: dashboardData.totalDrivers,
-    //   icon: <FaCarSide />,
-    //   bgColor: "bg-gradient-to-r from-yellow-50 to-yellow-100",
-    //   iconBg: "bg-gradient-to-r from-yellow-500 to-yellow-600",
-    //   textColor: "text-yellow-700",
-    // },
+    {
+      title: "Total Drivers",
+      value: dashboardData.totalDrivers,
+      icon: <FaCarSide />,
+      bgColor: "bg-gradient-to-r from-yellow-50 to-yellow-100",
+      iconBg: "bg-gradient-to-r from-yellow-500 to-yellow-600",
+      textColor: "text-yellow-700",
+    },
   ]
 
   // Create order status cards from the ordersByStatus object
@@ -374,9 +374,9 @@ const DashBoard = () => {
 
       {/* Bottom Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        {/* <div className="bg-white rounded-lg shadow-md border border-gray-100">
+        <div className="bg-white rounded-lg shadow-md border border-gray-100">
           <RestaurantsSection isLoading={restaurantsLoading} restaurants={topRestaurantsData?.data || []} />
-        </div> */}
+        </div>
         <div className="bg-white rounded-lg shadow-md border border-gray-100">
           <RecentOrder isLoading={ordersLoading} orders={recentOrdersData?.data || []} />
         </div>

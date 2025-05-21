@@ -86,8 +86,6 @@
 // export default Navbar
 
 
-"use client"
-
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { FaUser, FaCog, FaSignOutAlt } from "react-icons/fa"
